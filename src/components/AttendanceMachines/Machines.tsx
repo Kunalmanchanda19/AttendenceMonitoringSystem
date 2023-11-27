@@ -188,7 +188,7 @@ const Machines = () => {
     setSnackbarOpen(false);
   };
   const renderMachineCard = (SectionData: typeof data) => (
-    <Grid container spacing={2} sx={{ padding: 4 }}>
+    <Grid container spacing={2} sx={{ paddingX: 4 , paddingY:2}}>
       {SectionData.map((item) => (
         <Grid item key={item.id} xs={12} sm={6} md={4} lg={3} sx={{}}>
           <Card>
@@ -328,7 +328,7 @@ const Machines = () => {
             
             </CardContent>
             <CardActions  className=" " >
-              <Typography onClick={()=>handleviewlogs(item.id)}>
+              <Typography onClick={()=>handleviewlogs(item.id)} sx={{textAlign:"right"}} className=" max-w-xs	">
               <Logs name={nameforid} subtitle={locationforid}  />
               </Typography>
             </CardActions>
@@ -339,7 +339,7 @@ const Machines = () => {
   );
 
   return (
-    <Grid container spacing={2} sx={{ padding: 4 }}>
+    <Grid container spacing={2} sx={{ padding:4}}>
       {onStatusData.length !== 0 ? (
         <>
           <Typography variant="h5" sx={{ padding: 2 }}>
