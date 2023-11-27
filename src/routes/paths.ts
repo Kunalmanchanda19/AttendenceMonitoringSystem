@@ -1,6 +1,6 @@
 export const paths ={
 
-    DASHBOARD:'/dashboard',
+    DASHBOARD:'/',
     ATTENDANCE:'/attendance',
     TEST:'/test',
     

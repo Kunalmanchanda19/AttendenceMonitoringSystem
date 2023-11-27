@@ -4,9 +4,10 @@ import React from 'react'
 
 interface HeaderbarProps {
   name:string
+  subtitle:string
 }
 
-const HeaderBar:React.FC<HeaderbarProps> = ({name}) => {
+const HeaderBar:React.FC<HeaderbarProps> = ({name,subtitle}) => {
   return (
     <Grid
           data-testid="fc-header-panel"
@@ -21,6 +22,10 @@ const HeaderBar:React.FC<HeaderbarProps> = ({name}) => {
             <Typography variant="h5" align='center' sx={{ }} >
               {/* {title} */}
               {name}
+              
+            </Typography >
+            <Typography variant="body2" align='center' color="text.secondary">
+            {subtitle}
             </Typography>
           </Grid>
           <Grid item xs={6} sx={{ textAlign: 'right' }}>

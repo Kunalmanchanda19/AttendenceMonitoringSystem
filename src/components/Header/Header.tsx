@@ -46,7 +46,7 @@ export const Header = () => {
      {/* <div className='border border-black'>hello</div> */}
           <img src='assets/RSSB_logo.svg' alt='' className="w-10 h-12 m-2 mr-4"/>
           <Typography variant='h6' component='div' sx={{ flexGrow: 1, color: (theme) => theme.palette.common.white }}>
-            Attendance Marking System
+            Attendance Monitoring System
           </Typography>
           
         </Toolbar>

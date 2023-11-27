@@ -6,6 +6,7 @@ import { paths } from './paths';
 
 const Header = React.lazy(() => import('../components/Header/HeaderBar'));
 const Machines = React.lazy(()=>import('../components/AttendanceMachines/Machines'))
+const Logs = React.lazy(()=>import('../components/Logs/Logs'))
 
 
 const AppRoutes = () => {
@@ -18,6 +19,7 @@ const AppRoutes = () => {
           element={
             <Header 
             name="Dashboard" 
+            subtitle=""
             />
 
           }
@@ -30,8 +32,22 @@ const AppRoutes = () => {
             <div>
             <Header 
             name="Attendance System"
+            subtitle=""
             />
             <Machines/>
+            </div>
+          }
+        />
+        <Route
+          id="test"
+          path={paths.TEST}
+          element={
+            <div>
+            <Header 
+            name="Test"
+            subtitle=""
+            />
+           <Logs name="test" subtitle="hello" />
             </div>
           }
         />
