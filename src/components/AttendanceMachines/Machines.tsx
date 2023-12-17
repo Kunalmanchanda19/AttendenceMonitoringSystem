@@ -31,33 +31,33 @@ const data = [
     location: "Gate 2/Gate 2A",
     mac: "00:1A:",
     ip: "192.168.0.1",
-    last_synced: "3 mins ago ago ago ago ",
-    temp: "2034°C",
-    humidity: "1010112 gm^-3",
+    last_synced: "3 mins ago ",
+    temp: 35,
+    humidity: 60,
   },
   {
     id: 2,
     title: "Machine 2",
     content: "Content for Card 2",
-    status: "on",
+    status: "off",
     location: "Gate 2A",
     mac: "00:1A:2B",
     ip: "192.168.0.1",
     last_synced: "3 mins ago",
-    temp: "20°C",
-    humidity: "10 gm^-3",
+    temp: 20,
+    humidity : 65,
   },
   {
     id: 3,
     title: "Machine 3",
     content: "Content for Card 3",
-    status: "off",
+    status: "on",
     location: "Gate 2A",
     mac: "00:1A:2B:3C",
     ip: "192.168.0.1",
     last_synced: "3 mins ago",
-    temp: "20°C",
-    humidity: "10 gm^-3",
+    temp:68,
+    humidity : 85,
   },
   {
     id: 4,
@@ -68,81 +68,70 @@ const data = [
     mac: "00:1A:2B:3C:4D",
     ip: "192.168.0.1",
     last_synced: "3 mins ago",
-    temp: "20°C",
-    humidity: "10 gm^-3",
+    temp: 3 ,
+    humidity : 55,
   },
   {
     id: 5,
     title: "Machine 5",
     content: "Content for Card 1",
-    status: "off",
-    location: "Gate 2A",
-    mac: "00:1A:2B:3C:4D:5E",
-    ip: "192.168.0.1",
-    last_synced: "3 mins ago",
-    temp: "20°C",
-    humidity: "10 gm^-3",
-  },
-  {
-    id: 6,
-    title: "Machine 6",
-    content: "Content for Card 2",
     status: "on",
     location: "Gate 2A",
     mac: "00:1A:2B:3C:4D:5E",
     ip: "192.168.0.1",
     last_synced: "3 mins ago",
-    temp: "20°C",
-    humidity: "10 gm^-3",
+    temp: 48,
+    humidity : 75,
+  },
+  {
+    id: 6,
+    title: "Machine 6",
+    content: "Content for Card 2",
+    status: "off",
+    location: "Gate 2A",
+    mac: "00:1A:2B:3C:4D:5E",
+    ip: "192.168.0.1",
+    last_synced: "3 mins ago",
+    temp: 18,
+    humidity: 55,
   },
   {
     id: 7,
     title: "Machine 7",
     content: "Content for Card 2",
-    status: "off",
+    status: "on",
     location: "Gate 2A",
     mac: "00:1A:2B",
     ip: "192.168.0.1",
     last_synced: "3 mins ago",
-    temp: "20°C",
-    humidity: "10 gm^-3",
+    temp: 45,
+    humidity : 55,
   },
   {
     id: 8,
     title: "Machine 8",
     content: "Content for Card 2",
-    status: "off",
+    status: "on",
     location: "Gate 2A",
     mac: "00:1A:2B",
     ip: "192.168.0.1",
     last_synced: "3 mins ago",
-    temp: "20°C",
-    humidity: "10 gm^-3",
+    temp: 30,
+    humidity :45,
   },
   {
     id: 9,
     title: "Machine 9",
     content: "Content for Card 2",
-    status: "off",
+    status: "on",
     location: "Gate 2A",
     mac: "00:1A:2B",
     ip: "192.168.0.1",
     last_synced: "3 mins ago",
-    temp: "20°C",
-    humidity: "10 gm^-3",
+    temp: 25,
+    humidity : 55,
   },
-  {
-    id: 10,
-    title: "Machine 10",
-    content: "Content for Card 2",
-    status: "off",
-    location: "Gate 2A",
-    mac: "00:1A:2B",
-    ip: "192.168.0.1",
-    last_synced: "3 mins ago",
-    temp: "20°C",
-    humidity: "10 gm^-3",
-  },
+  
 
   // Add more data as needed
 ];
@@ -173,6 +162,22 @@ const Machines = () => {
     console.log(`No entry found with id ${entryWithId}`);
   }
 
+  const color =(item: typeof data[0]) => {
+
+    if(item.temp>=55 || item.humidity>=85 )
+    {
+        return "border-2 border-red-500 scale-105 mx-1"
+    }
+    else if(item.temp>=45 && item.temp<55 || item.humidity>=75 && item.humidity<85 )
+    {
+        return "border-2 border-amber-500 scale-105 mx-1"
+    }
+  
+    else {
+      return " "
+    }
+  }
+
   const handleCopyClick = (id: number) => {
     navigator.clipboard.writeText(textToCopy);
     setSnackbarOpen(true);
@@ -190,8 +195,8 @@ const Machines = () => {
   const renderMachineCard = (SectionData: typeof data) => (
     <Grid container spacing={2} sx={{ paddingX: 4 , paddingY:2}}>
       {SectionData.map((item) => (
-        <Grid item key={item.id} xs={12} sm={6} md={4} lg={3} sx={{}}>
-          <Card>
+        <Grid item key={item.id} xs={12} sm={6} md={4} lg={3} sx={{}} className="">
+          <Card className={color(item)}>
             <CardContent sx={{}} className="">
               <Grid
                 container
@@ -306,15 +311,15 @@ const Machines = () => {
                     </Typography>
                     <Grid container  className=" flex flex-row">
                       <Grid  className="" sx={{paddingRight:1}} >
-                    <Typography variant="caption" >
-                        <DeviceThermostatIcon fontSize="small"/>
-                        {item.temp}
+                    <Typography variant="caption"  sx={{color:item.temp>=45 && item.temp<55 ?"#FFBA00":item.temp>=55?"red" :"", fontStyle: "italic" }}  >
+                        {/* <DeviceThermostatIcon fontSize="small"/> */}
+                      Temp : {item.temp}°C ;
                     </Typography>
                     </Grid>
                     <Grid  className="" >
-                    <Typography variant="caption" >
-                        <WaterDropIcon fontSize="small"/>
-                        {item.humidity}
+                    <Typography variant="caption"  sx={{ color:item.humidity>=75 && item.humidity<85 ?"#FFBA00":item.humidity>=85?"red" :"",fontStyle: "italic"}}>
+                        {/* <WaterDropIcon fontSize="small" /> */}
+                       Humidity : {item.humidity}%
                     </Typography>
                     </Grid>
                     </Grid>
