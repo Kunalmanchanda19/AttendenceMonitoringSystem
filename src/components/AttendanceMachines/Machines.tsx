@@ -20,123 +20,143 @@ import IconButton from "@mui/material/IconButton";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
 import AdfScannerIcon from "@mui/icons-material/AdfScanner";
 import Logs from "../Logs/Logs";
-import MachinesMenu from "../../Menu/MachinesMenu";
+import MachinesMenu from "../Menu/MachinesMenu";
+// import Data from "../../json/Data.json";
 
-const data = [
-  {
-    id: 1,
-    title: "Machine 1",
-    content: "Content for Card 1",
-    status: "on",
-    location: "Gate 2/Gate 2A",
-    mac: "00:1A:",
-    ip: "192.168.0.1",
-    last_synced: "3 mins ago ",
-    temp: 35,
-    humidity: 60,
-  },
-  {
-    id: 2,
-    title: "Machine 2",
-    content: "Content for Card 2",
-    status: "off",
-    location: "Gate 2A",
-    mac: "00:1A:2B",
-    ip: "192.168.0.1",
-    last_synced: "3 mins ago",
-    temp: 20,
-    humidity : 65,
-  },
-  {
-    id: 3,
-    title: "Machine 3",
-    content: "Content for Card 3",
-    status: "on",
-    location: "Gate 2A",
-    mac: "00:1A:2B:3C",
-    ip: "192.168.0.1",
-    last_synced: "3 mins ago",
-    temp:68,
-    humidity : 85,
-  },
-  {
-    id: 4,
-    title: "Machine 4",
-    content: "Content for Card 4",
-    status: "on",
-    location: "Gate 2A",
-    mac: "00:1A:2B:3C:4D",
-    ip: "192.168.0.1",
-    last_synced: "3 mins ago",
-    temp: 3 ,
-    humidity : 55,
-  },
-  {
-    id: 5,
-    title: "Machine 5",
-    content: "Content for Card 1",
-    status: "on",
-    location: "Gate 2A",
-    mac: "00:1A:2B:3C:4D:5E",
-    ip: "192.168.0.1",
-    last_synced: "3 mins ago",
-    temp: 48,
-    humidity : 75,
-  },
-  {
-    id: 6,
-    title: "Machine 6",
-    content: "Content for Card 2",
-    status: "off",
-    location: "Gate 2A",
-    mac: "00:1A:2B:3C:4D:5E",
-    ip: "192.168.0.1",
-    last_synced: "3 mins ago",
-    temp: 18,
-    humidity: 55,
-  },
-  {
-    id: 7,
-    title: "Machine 7",
-    content: "Content for Card 2",
-    status: "on",
-    location: "Gate 2A",
-    mac: "00:1A:2B",
-    ip: "192.168.0.1",
-    last_synced: "3 mins ago",
-    temp: 45,
-    humidity : 55,
-  },
-  {
-    id: 8,
-    title: "Machine 8",
-    content: "Content for Card 2",
-    status: "on",
-    location: "Gate 2A",
-    mac: "00:1A:2B",
-    ip: "192.168.0.1",
-    last_synced: "3 mins ago",
-    temp: 30,
-    humidity :45,
-  },
-  {
-    id: 9,
-    title: "Machine 9",
-    content: "Content for Card 2",
-    status: "on",
-    location: "Gate 2A",
-    mac: "00:1A:2B",
-    ip: "192.168.0.1",
-    last_synced: "3 mins ago",
-    temp: 25,
-    humidity : 55,
-  },
+
+
+// const data = [
+//   {
+//     id: 1,
+//     title: "Machine 1",
+//     content: "Content for Card 1",
+//     status: "on",
+//     location: "Gate 2/Gate 2A",
+//     mac: "00:1A:",
+//     ip: "192.168.0.1",
+//     last_synced: "3 mins ago ",
+//     temp: 35,
+//     humidity: 60,
+//   },
+//   {
+//     id: 2,
+//     title: "Machine 2",
+//     content: "Content for Card 2",
+//     status: "off",
+//     location: "Gate 2A",
+//     mac: "00:1A:2B",
+//     ip: "192.168.0.1",
+//     last_synced: "3 mins ago",
+//     temp: 20,
+//     humidity : 65,
+//   },
+//   {
+//     id: 3,
+//     title: "Machine 3",
+//     content: "Content for Card 3",
+//     status: "on",
+//     location: "Gate 2A",
+//     mac: "00:1A:2B:3C",
+//     ip: "192.168.0.1",
+//     last_synced: "3 mins ago",
+//     temp:68,
+//     humidity : 85,
+//   },
+//   {
+//     id: 4,
+//     title: "Machine 4",
+//     content: "Content for Card 4",
+//     status: "on",
+//     location: "Gate 2A",
+//     mac: "00:1A:2B:3C:4D",
+//     ip: "192.168.0.1",
+//     last_synced: "3 mins ago",
+//     temp: 3 ,
+//     humidity : 55,
+//   },
+//   {
+//     id: 5,
+//     title: "Machine 5",
+//     content: "Content for Card 1",
+//     status: "on",
+//     location: "Gate 2A",
+//     mac: "00:1A:2B:3C:4D:5E",
+//     ip: "192.168.0.1",
+//     last_synced: "3 mins ago",
+//     temp: 48,
+//     humidity : 75,
+//   },
+//   {
+//     id: 6,
+//     title: "Machine 6",
+//     content: "Content for Card 2",
+//     status: "off",
+//     location: "Gate 2A",
+//     mac: "00:1A:2B:3C:4D:5E",
+//     ip: "192.168.0.1",
+//     last_synced: "3 mins ago",
+//     temp: 18,
+//     humidity: 55,
+//   },
+//   {
+//     id: 7,
+//     title: "Machine 7",
+//     content: "Content for Card 2",
+//     status: "on",
+//     location: "Gate 2A",
+//     mac: "00:1A:2B",
+//     ip: "192.168.0.1",
+//     last_synced: "3 mins ago",
+//     temp: 45,
+//     humidity : 55,
+//   },
+//   {
+//     id: 8,
+//     title: "Machine 8",
+//     content: "Content for Card 2",
+//     status: "on",
+//     location: "Gate 2A",
+//     mac: "00:1A:2B",
+//     ip: "192.168.0.1",
+//     last_synced: "3 mins ago",
+//     temp: 30,
+//     humidity :45,
+//   },
+//   {
+//     id: 9,
+//     title: "Machine 9",
+//     content: "Content for Card 2",
+//     status: "on",
+//     location: "Gate 2A",
+//     mac: "00:1A:2B",
+//     ip: "192.168.0.1",
+//     last_synced: "3 mins ago",
+//     temp: 25,
+//     humidity : 75,
+//   },
   
 
-  // Add more data as needed
-];
+//   // Add more data as needed
+// ];
+interface Machine {
+  id: number;
+  title: string;
+  content: string;
+  status: string;
+  location: string;
+  mac: string;
+  ip: string;
+  last_synced: string;
+  temp: number;
+  humidity: number;
+}
 
-const Machines = () => {
+interface MachinesProps {
+  MachinesInfo : Machine[]
+}
+
+const Machines:React.FC<MachinesProps> = ({MachinesInfo}) => {
+  const data = MachinesInfo
   const [isSnackbarOpen, setSnackbarOpen] = useState(false);
   const [copiedItemId, setCopiedItemId] = useState<number | null>(null);
   const [ViewItemId, setViewItemId] = useState<number | null>(null);
@@ -348,7 +368,7 @@ const Machines = () => {
       {onStatusData.length !== 0 ? (
         <>
           <Typography variant="h5" sx={{ padding: 2 }}>
-            On Status Machines
+            On Machines
           </Typography>
           {renderMachineCard(onStatusData)}
         </>
@@ -357,7 +377,7 @@ const Machines = () => {
       {offStatusData.length !== 0 ? (
         <>
           <Typography variant="h5" sx={{ padding: 2 }}>
-            Off Status Machines
+            Off Machines
           </Typography>
           {renderMachineCard(offStatusData)}
         </>

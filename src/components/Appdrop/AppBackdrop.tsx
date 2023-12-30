@@ -9,6 +9,7 @@ const AppBackdrop: React.FC<AppBackdropProps> = ({ show }) => {
         <Backdrop
             sx={{
                 color: '#fff',
+                // color:'black',
                 zIndex: (theme) => theme.zIndex.drawer + 1,
             }}
             open={show}

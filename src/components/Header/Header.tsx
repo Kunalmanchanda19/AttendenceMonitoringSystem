@@ -18,7 +18,7 @@ const ElevationScroll = ({ children }: { children: any }) => {
   });
 };
 
-export const Header = () => {
+const Header :React.FC = () => {
   return (
     <ElevationScroll>
       <AppBar position='sticky' color='primary'>
@@ -54,3 +54,4 @@ export const Header = () => {
     </ElevationScroll>
   );
 };
+export default Header;

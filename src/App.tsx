@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from './components/Header/Header';
+import Header from './components/Header/Header';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import ResponsiveDrawer from './components/Drawer/Drawer';
@@ -17,12 +17,12 @@ function App() {
       {/* <Routes> */}
             <AppRoutes/>
       {/* </Routes> */}
-    </Router>
+       </Router>
       {/* <HeaderBar 
       
       name="Attendance System"
       /> */}
-      {/* <ResponsiveDrawer/> */}
+      {/* <ResponsiveDrawer/> */} 
 
     </div>
   );

@@ -34,6 +34,7 @@ interface functions {
 }
 const functions:functions[] =[
   {name:"Attendance System" , path:"/attendance"},
+  {name:"Attendance Reports" , path:"/attendance-reports"},
   {name:"test" , path:"/test"}
 ]
 
