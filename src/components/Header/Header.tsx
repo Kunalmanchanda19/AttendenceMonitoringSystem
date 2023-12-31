@@ -7,6 +7,8 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import { Box, Button, IconButton } from '@mui/material';
 import ResponsiveDrawer from '../Drawer/Drawer';
 
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+
 const ElevationScroll = ({ children }: { children: any }) => {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -48,9 +50,16 @@ const Header :React.FC = () => {
           <Typography variant='h6' component='div' sx={{ flexGrow: 1, color: (theme) => theme.palette.common.white }}>
             Attendance Monitoring System
           </Typography>
-          
+
+          <IconButton color="default" >
+      <InfoOutlinedIcon style={{ color: 'white' }} />
+    </IconButton>
+         
         </Toolbar>
       </AppBar>
+
+
+
     </ElevationScroll>
   );
 };
