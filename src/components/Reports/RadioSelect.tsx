@@ -53,8 +53,9 @@ const RadioSelect:React.FC<radioSelectProps> = ({MachinesData}) => {
     
         <Grid container className='justify-center content-center flex ' spacing={2} sx={{marginTop:3}}>
       {/* First row */}
-      <Grid item xs={8}>
-        <FormControl>
+     
+      <Grid item xs={10} className="">
+        <FormControl sx={{paddingX:1}}>
           <RadioGroup
             row
             name="radio-buttons-group"
@@ -67,12 +68,13 @@ const RadioSelect:React.FC<radioSelectProps> = ({MachinesData}) => {
         </FormControl>
       </Grid>
       {/*  */}
-    
-      <Grid item xs={8}>
+      
+      
+      <Grid item xs={10} >
      
       {loading ? <AppBackdrop show={loading} /> :  (
       <React.Suspense fallback={<AppBackdrop show={loading} />}>
-      {value === "AttendanceReport" ?  <AttendanceReport Machines={MachinesData} /> : value === "MachineHealth" ? <MachineHealth /> :null}
+      {value === "AttendanceReport" ?  <AttendanceReport Machines={MachinesData} /> : value === "MachineHealth" ? <MachineHealth Machines={MachinesData} /> :null}
       </React.Suspense>
          )} 
            
